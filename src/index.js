@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 const app = express();
 const notificationsRoute = require('./routes/notification.js');
+const appleRoute = require('./routes/apple.js');
 const helmet = require('helmet');
 const cors = require('cors');
 
@@ -15,6 +16,7 @@ NODE_ENV !== "production" ? app.use(morgan('dev')) : app.use(morgan('combined'))
 app.use(helmet());
 app.use(cors());
 app.use('/api/notification', notificationsRoute);
+app.use('/api/apple', appleRoute);
 
 
 
